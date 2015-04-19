@@ -1,0 +1,15 @@
+{
+  "name": "Marionette Contact Manager",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.0",
+    "mongoose": "~4.0.1"
+  },
+  "devDependencies": {
+    "mongodb": "~2.0.27"
+  }
+}
