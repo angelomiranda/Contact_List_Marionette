@@ -1,0 +1,24 @@
+{
+  "name": "Contact_Manager",
+  "version": "0.0.1",
+  "homepage": "https://github.com/angelomiranda/Contact_List_Marionette",
+  "authors": [
+    "angelomiranda <angelo.miranda@live.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.3.4"
+  },
+  "dependencies": {
+    "lodash": "~3.7.0",
+    "marionette": "~2.4.1"
+  }
+}
