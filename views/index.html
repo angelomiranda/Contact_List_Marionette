@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    Hello World
-    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <div class="container">
+        <table class="table table-hover">
+          <caption>Contact Manager - Marionette</caption>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+            </tr>
+          </thead>
+          <tbody id="contact-list-wrap">
+            <tr>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"/></script>
+    <script src="public/js/app.js"></script>
 </body>
 </html>

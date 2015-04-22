@@ -8,11 +8,14 @@
   "browser": {
     "backbone": "./bower_components/backbone/backbone.js",
     "jquery": "./bower_components/jquery/dist/jquery.js",
-    "underscore": "./bower_components/underscore/underscore.js"
+    "underscore": "./bower_components/underscore/underscore.js",
+    "backbone.wreqr": "./bower_components/backbone.wreqr/lib/backbone.wreqr.js",
+    "backbone.marionette": "./bower_components/marionette/lib/backbone.marionette.js"
   },
   "browserify": {
     "transform": [
-      "browserify-shim"
+      "browserify-shim",
+      "hbsfy"
     ]
   },
   "browserify-shim": {
@@ -28,6 +31,21 @@
     },
     "underscore": {
       "exports": "_"
+    },
+    "backbone.wreqr": {
+      "exports": "Backbone.Wreqr",
+      "depends": [
+        "backbone:Backbone",
+        "underscore:_"
+      ]
+    },
+    "backbone.marionette": {
+      "exports": "Marionette",
+      "depends": [
+        "jquery:jQuery",
+        "underscore:_",
+        "backbone:Backbone"
+      ]
     }
   },
   "dependencies": {
@@ -51,6 +69,7 @@
     "watchify": "~3.1.1",
     "gulp-util": "~3.0.4",
     "gulp-browserify": "~0.5.1",
-    "browserify-shim": "~3.8.5"
+    "browserify-shim": "~3.8.5",
+    "handlebars": "~2.0.0"
   }
 }

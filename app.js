@@ -2,14 +2,10 @@
 /**
  * Module dependencies.
  */
-
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
-var methodOverride = require('method-override');
 var app = express();
 
 mongoose.connect('mongodb://localhost/contacts');
@@ -24,7 +20,9 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname)));
+
+console.log(__dirname)
 
 // development only
 if ('development' == app.get('env')) {

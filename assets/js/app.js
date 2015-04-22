@@ -1,14 +1,25 @@
 
+'use strict';
+
 var $ = require('jquery');
 
-var View = require('./src/view');
+var ContactCollection = require('./src/collection/contact-list');
+
+var ContactListView = require('./src/views/contact-item-view');
 
 $(document).ready(function() {
-    var view = new View({
-        el: '.container'
+
+    contactCollection = new ContactCollection();
+
+    var contactListView = new ContactListView({
+        el: '#contact-list-wrap',
+        collection: contactCollection
     });
 
-    console.log(view)
+    contactCollection.fetch();
+
+    contactListView.render();
+
 });
 
 // // Get All
