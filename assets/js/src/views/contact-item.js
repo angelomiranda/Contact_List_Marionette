@@ -1,6 +1,7 @@
 
 'use strict';
 
+var $ = require('jquery');
 var contactItemTemplate = require('../../../templates/contact-item.hbs');
 
 var Marionette = require('backbone.marionette');
@@ -10,18 +11,17 @@ module.exports = Marionette.ItemView.extend({
     tagName: 'tr',
 
     events: {
-        'click': 'didClickItem'
+        'click .js-contact-delete': 'didClickDeleteButton'
     },
 
-    modelEvents: {
-        'change': 'render'
-    },
+    didClickDeleteButton: function () {
+        var self = this;
+        $.post('/contact/' + self.model.get('_id'), { _method : 'delete' })
+        .then(function(response) {
+            if (response.status === 'ok') {
+                self.model.destroy();
+            }
+        });
 
-    collectionEvents: {
-        'add': 'render'
-    },
-
-    didClickItem: function (event) {
-        console.log( $(event.target) )
     }
 });

@@ -27,16 +27,14 @@ gulp.task('jshint', function() {
 
 gulp.task('scripts', function() {
     gulp.src(paths.entrySrc)
-        .pipe(browserify({
-            debug: true
-        }))
+        .pipe(browserify())
         .on('error', function(err){
             console.log(err);
             throw err;
         })
         .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sourcemaps.write('./'))
+        // .pipe(sourcemaps.init({loadMaps: true}))
+        // .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.buildScriptDir));
 });
 

@@ -52,9 +52,7 @@ app.get('/contacts', function (req, res) {
 
 // Add a Contact
 app.post('/contacts', function (req, res){
-  var contacts;
-  console.log("POST: ");
-  contact = new ContactsModel({
+  var contact = new ContactsModel({
     name: req.body.name,
     age: req.body.age,
     gender: req.body.gender,
@@ -70,12 +68,15 @@ app.post('/contacts', function (req, res){
       return res.json({status: 'error'});
     }
   });
-  return res.send(contact);
+  return res.json({
+    status: 'ok',
+    message: 'Contact successfully updated',
+    contact: contact
+  });
 });
 
 // Get Contact By ID
 app.get('/contacts/:id', function (req, res) {
-  console.log ( req.params.id )
   return ContactsModel.findById(req.params.id, function (err, contact) {
     if (!err) {
       return res.json({
