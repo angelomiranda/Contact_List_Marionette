@@ -41,5 +41,5 @@ gulp.task('scripts', function() {
 gulp.task('default', ['jshint', 'scripts']);
 
 gulp.task('watch', function () {
-    gulp.watch(paths.scriptSrc, ['scripts']);
+    gulp.watch(['./assets/js/*.js', './assets/js/**/*.js', './assets/js/**/**/*.js'], ['scripts']);
 });
