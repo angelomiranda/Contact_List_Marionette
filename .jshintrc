@@ -90,6 +90,7 @@
     // Custom Globals - additional predefined global variables
     "globals"       : {
         "require"   : false,
-        "module"    : false
+        "module"    : false,
+        "gulp"      : false
     }
 }
