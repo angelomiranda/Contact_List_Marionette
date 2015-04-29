@@ -1,7 +1,6 @@
 
 'use strict';
 
-
 var $ = require('jquery');
 var mediator = require('../events/mediator');
 
@@ -16,12 +15,6 @@ module.exports = Backbone.Collection.extend({
         mediator.on('contact:add', this.addContact, this);
     },
 
-    willAddContact: function (response) {
-        if (response.status === 'ok') {
-            this.add(contactModel);
-        }
-    },
-
     addContact: function (contact) {
 
         var self = this;
@@ -31,22 +24,18 @@ module.exports = Backbone.Collection.extend({
             gender: contact.gender
         };
 
-        // var contactModel = new Contact({
-        //     name: contact.name,
-        //     age: contact.age,
-        //     gender: contact.gender
-        // });
-
         $.post('/contacts', contactModel)
              .then(function (response) {
                 if (response.status === 'ok') {
                     self.add(contactModel);
-                    self.fetch();
+                    self.fetchCollection();
                     mediator.trigger('contact:added');
                 }
              });
+    },
 
-        // this.add(contactModel);
+    fetchCollection: function () {
+        this.fetch();
     }
 });
 
