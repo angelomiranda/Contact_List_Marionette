@@ -1,0 +1,31 @@
+.container {
+  margin-top: 50px;
+}
+.add-contact {
+  padding: 15px 30px 30px 30px;
+}
+.table>tbody>tr>td:nth-child(1),
+.table>tbody>tr>td:nth-child(2),
+.table>tbody>tr>td:nth-child(3){
+    padding-top: 14px;
+}
+.contact-item-field {
+  padding: 2px 5px;
+  display: none;
+}
+.js-contact-item-field,
+.is-editing .contact-item-value {
+  display: none;
+}
+.is-editing .js-contact-item-field {
+  display: block;
+}
+.contact-item-name {
+  max-width: 117px;
+}
+.contact-item-age {
+  max-width: 50px;
+}
+.contact-item-gender {
+  max-width: 110px;
+}
