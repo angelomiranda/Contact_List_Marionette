@@ -20,8 +20,8 @@ Front End application would be able to:
 - Retrieve entire collection of contact
 - Add a contact
 - Delete a contact
-- Update a contact By Id (pending)
-- Edit a contact By Id (pending)
+- Update a contact By Id
+- Edit a contact By Id 
 
 
 
