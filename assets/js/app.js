@@ -1,4 +1,4 @@
-/*jshint unused: true */
+/*jshint unused:false */
 
 var $ = require('jquery');
 
