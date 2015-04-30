@@ -139,6 +139,18 @@ app.get('/', function (req, res) {
     res.sendfile(__dirname + '/views/index.html');
 });
 
+app.get('/angelo', function (req, res) {
+    res.sendfile(__dirname + '/views/angelo.html');
+});
+
+app.get('/kristine', function (req, res) {
+    res.sendfile(__dirname + '/views/kristine.html');
+});
+
+app.get('/aaron', function (req, res) {
+    res.sendfile(__dirname + '/views/aaron.html');
+});
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
