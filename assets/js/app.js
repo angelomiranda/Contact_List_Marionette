@@ -3,7 +3,7 @@
 var $ = require('jquery');
 
 var ContactCollection = require('./src/collection/contact-list');
-var ContactListView = require('./src/views/contact-item-view');
+var ContactCompositeView = require('./src/views/contact-composite-view');
 
 var AddContactView = require('./src/views/add-contact-view');
 
@@ -12,8 +12,8 @@ $(document).ready(function() {
 
     var contactCollection = new ContactCollection();
 
-    var contactListView = new ContactListView({
-        el: '#contact-list-wrap',
+    var contactCompositeView = new ContactCompositeView({
+        el: '#js-contact-list-content',
         collection: contactCollection
     });
 
@@ -21,7 +21,6 @@ $(document).ready(function() {
         el: '#js-add-contact'
     });
 
-    contactCollection.fetch();
-    contactListView.render();
+    contactCompositeView.render();
 
 });
