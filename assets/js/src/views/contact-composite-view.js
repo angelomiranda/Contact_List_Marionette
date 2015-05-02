@@ -9,14 +9,13 @@ var Marionette = require('backbone.marionette');
 
 module.exports = Marionette.CompositeView.extend({
 
-    childView: ContactItemView,
+  childView: ContactItemView,
 
-    childViewContainer: '#js-contact-list-wrap',
+  childViewContainer: '#js-contact-list-wrap',
 
-    template: contactItemTemplate,
+  template: contactItemTemplate,
 
-    onRender: function () {
-       this.collection.fetchCollection();
-    }
-
+  onRender: function () {
+     this.collection.fetchCollection();
+  }
 });

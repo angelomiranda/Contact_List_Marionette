@@ -8,8 +8,8 @@ module.exports = Marionette.LayoutView.extend({
   template: contactLayoutViewTemplate,
 
   regions: {
-    title: "#title",
-    contentListContent: "#content-list-content",
-    contactContent: "#contact-item-content"
+    title: "#js-title",
+    contentListContent: "#js-contact-list-content",
+    contactContent: "#js-contact-item-content"
   }
 });
